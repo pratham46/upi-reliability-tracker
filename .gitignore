@@ -1,0 +1,27 @@
+# Dependencies
+web/node_modules/
+pipeline/__pycache__/
+pipeline/*.egg-info/
+pipeline/.venv/
+pipeline/venv/
+
+# Build output
+web/dist/
+
+# Data artifacts (regenerate with pipeline)
+pipeline/tidy.parquet
+pipeline/tidy.csv
+
+# Env / secrets
+.env
+.env.*
+*.pem
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude internal
+.claude/

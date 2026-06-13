@@ -1,0 +1,1718 @@
+[
+  {
+    "bank": "Punjab National Bank",
+    "role": "beneficiary",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 2.54,
+        "bd_pct": 0.58,
+        "approved_pct": 96.89,
+        "volume_mn": 826.8
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 2.17,
+        "bd_pct": 0.7,
+        "approved_pct": 97.12,
+        "volume_mn": 878.1
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 2.09,
+        "bd_pct": 0.54,
+        "approved_pct": 97.36,
+        "volume_mn": 811.4
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 1.94,
+        "bd_pct": 0.56,
+        "approved_pct": 97.5,
+        "volume_mn": 868.9
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 1.87,
+        "bd_pct": 0.67,
+        "approved_pct": 97.47,
+        "volume_mn": 815.7
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 1.42,
+        "bd_pct": 0.78,
+        "approved_pct": 97.8,
+        "volume_mn": 885.0
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 2.11,
+        "bd_pct": 0.72,
+        "approved_pct": 97.17,
+        "volume_mn": 853.0
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 2.76,
+        "bd_pct": 0.44,
+        "approved_pct": 96.8,
+        "volume_mn": 766.5
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 2.83,
+        "bd_pct": 0.56,
+        "approved_pct": 96.61,
+        "volume_mn": 870.0
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 2.18,
+        "bd_pct": 0.67,
+        "approved_pct": 97.14,
+        "volume_mn": 811.4
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 2.49,
+        "bd_pct": 0.6,
+        "approved_pct": 96.91,
+        "volume_mn": 810.8
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 2.49,
+        "bd_pct": 0.7,
+        "approved_pct": 96.81,
+        "volume_mn": 777.5
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 2.26,
+        "bd_pct": 0.83,
+        "approved_pct": 96.91,
+        "volume_mn": 847.1
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 1.85,
+        "bd_pct": 0.72,
+        "approved_pct": 97.44,
+        "volume_mn": 758.0
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 2.2,
+        "bd_pct": 0.53,
+        "approved_pct": 97.28,
+        "volume_mn": 861.9
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 2.12,
+        "bd_pct": 0.87,
+        "approved_pct": 97.01,
+        "volume_mn": 825.0
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 2.09,
+        "bd_pct": 0.48,
+        "approved_pct": 97.43,
+        "volume_mn": 830.7
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 2.52,
+        "bd_pct": 0.46,
+        "approved_pct": 97.02,
+        "volume_mn": 816.0
+      }
+    ],
+    "stats": {
+      "mean_td": 2.2183,
+      "std_td": 0.3368,
+      "max_td": 2.83,
+      "latest_td": 2.52,
+      "months": 18,
+      "classification": "chronically_weak",
+      "impact_score": 18.3799,
+      "trend": "flat",
+      "mean_volume_mn": 828.5
+    }
+  },
+  {
+    "bank": "Punjab National Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 2.3,
+        "bd_pct": 4.22,
+        "approved_pct": 93.49,
+        "volume_mn": 839.7
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 1.91,
+        "bd_pct": 4.09,
+        "approved_pct": 94.0,
+        "volume_mn": 803.0
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 1.93,
+        "bd_pct": 4.26,
+        "approved_pct": 93.81,
+        "volume_mn": 885.3
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 2.13,
+        "bd_pct": 4.01,
+        "approved_pct": 93.86,
+        "volume_mn": 856.6
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 1.89,
+        "bd_pct": 4.37,
+        "approved_pct": 93.74,
+        "volume_mn": 784.6
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 2.1,
+        "bd_pct": 4.54,
+        "approved_pct": 93.36,
+        "volume_mn": 812.5
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 2.52,
+        "bd_pct": 4.52,
+        "approved_pct": 92.96,
+        "volume_mn": 764.9
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 2.33,
+        "bd_pct": 4.0,
+        "approved_pct": 93.67,
+        "volume_mn": 834.7
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 2.41,
+        "bd_pct": 4.09,
+        "approved_pct": 93.5,
+        "volume_mn": 863.9
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 2.2,
+        "bd_pct": 4.47,
+        "approved_pct": 93.33,
+        "volume_mn": 814.8
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 2.08,
+        "bd_pct": 3.98,
+        "approved_pct": 93.95,
+        "volume_mn": 802.2
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 1.82,
+        "bd_pct": 4.44,
+        "approved_pct": 93.74,
+        "volume_mn": 852.9
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 1.74,
+        "bd_pct": 4.04,
+        "approved_pct": 94.22,
+        "volume_mn": 820.6
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 2.38,
+        "bd_pct": 4.21,
+        "approved_pct": 93.42,
+        "volume_mn": 853.3
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 2.15,
+        "bd_pct": 4.21,
+        "approved_pct": 93.63,
+        "volume_mn": 825.2
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 2.18,
+        "bd_pct": 3.91,
+        "approved_pct": 93.91,
+        "volume_mn": 833.2
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 2.68,
+        "bd_pct": 4.25,
+        "approved_pct": 93.07,
+        "volume_mn": 778.3
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 2.11,
+        "bd_pct": 4.1,
+        "approved_pct": 93.78,
+        "volume_mn": 782.8
+      }
+    ],
+    "stats": {
+      "mean_td": 2.1589,
+      "std_td": 0.2421,
+      "max_td": 2.68,
+      "latest_td": 2.11,
+      "months": 18,
+      "classification": "chronically_weak",
+      "impact_score": 17.7611,
+      "trend": "flat",
+      "mean_volume_mn": 822.7
+    }
+  },
+  {
+    "bank": "Bank of Baroda",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 1.63,
+        "bd_pct": 3.77,
+        "approved_pct": 94.6,
+        "volume_mn": 659.3
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 1.85,
+        "bd_pct": 3.91,
+        "approved_pct": 94.24,
+        "volume_mn": 695.4
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 1.69,
+        "bd_pct": 3.8,
+        "approved_pct": 94.51,
+        "volume_mn": 602.9
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 1.79,
+        "bd_pct": 3.8,
+        "approved_pct": 94.41,
+        "volume_mn": 631.7
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 1.82,
+        "bd_pct": 3.86,
+        "approved_pct": 94.33,
+        "volume_mn": 663.6
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 2.0,
+        "bd_pct": 3.65,
+        "approved_pct": 94.34,
+        "volume_mn": 603.3
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 1.93,
+        "bd_pct": 3.99,
+        "approved_pct": 94.08,
+        "volume_mn": 668.2
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 2.16,
+        "bd_pct": 3.78,
+        "approved_pct": 94.05,
+        "volume_mn": 598.8
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 1.68,
+        "bd_pct": 3.76,
+        "approved_pct": 94.57,
+        "volume_mn": 611.3
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 1.65,
+        "bd_pct": 4.05,
+        "approved_pct": 94.3,
+        "volume_mn": 621.7
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 2.13,
+        "bd_pct": 3.89,
+        "approved_pct": 93.97,
+        "volume_mn": 632.3
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 1.72,
+        "bd_pct": 3.71,
+        "approved_pct": 94.58,
+        "volume_mn": 618.7
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 1.95,
+        "bd_pct": 3.63,
+        "approved_pct": 94.41,
+        "volume_mn": 691.3
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 2.17,
+        "bd_pct": 3.5,
+        "approved_pct": 94.32,
+        "volume_mn": 641.6
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 2.03,
+        "bd_pct": 3.8,
+        "approved_pct": 94.17,
+        "volume_mn": 665.6
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 2.32,
+        "bd_pct": 4.1,
+        "approved_pct": 93.58,
+        "volume_mn": 679.4
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 1.91,
+        "bd_pct": 4.06,
+        "approved_pct": 94.03,
+        "volume_mn": 633.4
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 1.4,
+        "bd_pct": 3.82,
+        "approved_pct": 94.78,
+        "volume_mn": 699.6
+      }
+    ],
+    "stats": {
+      "mean_td": 1.8794,
+      "std_td": 0.2266,
+      "max_td": 2.32,
+      "latest_td": 1.4,
+      "months": 18,
+      "classification": "chronically_weak",
+      "impact_score": 12.1309,
+      "trend": "flat",
+      "mean_volume_mn": 645.4
+    }
+  },
+  {
+    "bank": "Canara Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 1.61,
+        "bd_pct": 3.48,
+        "approved_pct": 94.9,
+        "volume_mn": 566.4
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 1.37,
+        "bd_pct": 3.34,
+        "approved_pct": 95.29,
+        "volume_mn": 511.6
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 1.9,
+        "bd_pct": 3.63,
+        "approved_pct": 94.46,
+        "volume_mn": 565.2
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 2.24,
+        "bd_pct": 3.54,
+        "approved_pct": 94.22,
+        "volume_mn": 572.7
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 1.68,
+        "bd_pct": 3.82,
+        "approved_pct": 94.5,
+        "volume_mn": 571.1
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 2.13,
+        "bd_pct": 3.5,
+        "approved_pct": 94.37,
+        "volume_mn": 580.5
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 1.61,
+        "bd_pct": 3.58,
+        "approved_pct": 94.81,
+        "volume_mn": 573.7
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 1.7,
+        "bd_pct": 3.38,
+        "approved_pct": 94.92,
+        "volume_mn": 554.1
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 1.39,
+        "bd_pct": 3.8,
+        "approved_pct": 94.81,
+        "volume_mn": 565.6
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 1.78,
+        "bd_pct": 3.51,
+        "approved_pct": 94.7,
+        "volume_mn": 525.2
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 1.39,
+        "bd_pct": 3.77,
+        "approved_pct": 94.84,
+        "volume_mn": 559.0
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 1.81,
+        "bd_pct": 3.52,
+        "approved_pct": 94.68,
+        "volume_mn": 537.9
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 1.59,
+        "bd_pct": 3.33,
+        "approved_pct": 95.08,
+        "volume_mn": 519.2
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 1.59,
+        "bd_pct": 3.31,
+        "approved_pct": 95.09,
+        "volume_mn": 548.9
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 1.68,
+        "bd_pct": 3.29,
+        "approved_pct": 95.03,
+        "volume_mn": 562.0
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 1.43,
+        "bd_pct": 3.63,
+        "approved_pct": 94.94,
+        "volume_mn": 528.8
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 1.92,
+        "bd_pct": 3.34,
+        "approved_pct": 94.74,
+        "volume_mn": 520.7
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 1.37,
+        "bd_pct": 3.48,
+        "approved_pct": 95.14,
+        "volume_mn": 505.5
+      }
+    ],
+    "stats": {
+      "mean_td": 1.6772,
+      "std_td": 0.247,
+      "max_td": 2.24,
+      "latest_td": 1.37,
+      "months": 18,
+      "classification": "chronically_weak",
+      "impact_score": 9.195,
+      "trend": "improving",
+      "mean_volume_mn": 548.2
+    }
+  },
+  {
+    "bank": "IndusInd Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 1.58,
+        "bd_pct": 2.76,
+        "approved_pct": 95.66,
+        "volume_mn": 448.7
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 1.88,
+        "bd_pct": 2.79,
+        "approved_pct": 95.33,
+        "volume_mn": 484.4
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 1.77,
+        "bd_pct": 2.8,
+        "approved_pct": 95.43,
+        "volume_mn": 516.2
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 2.06,
+        "bd_pct": 2.55,
+        "approved_pct": 95.39,
+        "volume_mn": 448.2
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 1.17,
+        "bd_pct": 2.88,
+        "approved_pct": 95.96,
+        "volume_mn": 513.4
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.72,
+        "bd_pct": 2.81,
+        "approved_pct": 96.47,
+        "volume_mn": 472.4
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.46,
+        "bd_pct": 2.9,
+        "approved_pct": 96.64,
+        "volume_mn": 481.7
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 1.65,
+        "bd_pct": 2.92,
+        "approved_pct": 95.44,
+        "volume_mn": 462.5
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 1.1,
+        "bd_pct": 2.87,
+        "approved_pct": 96.03,
+        "volume_mn": 501.5
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.75,
+        "bd_pct": 2.68,
+        "approved_pct": 96.57,
+        "volume_mn": 517.0
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 1.02,
+        "bd_pct": 2.88,
+        "approved_pct": 96.11,
+        "volume_mn": 473.9
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.85,
+        "bd_pct": 2.73,
+        "approved_pct": 96.42,
+        "volume_mn": 495.1
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.33,
+        "bd_pct": 2.77,
+        "approved_pct": 96.89,
+        "volume_mn": 462.7
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 1.59,
+        "bd_pct": 2.82,
+        "approved_pct": 95.59,
+        "volume_mn": 493.8
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 1.26,
+        "bd_pct": 2.86,
+        "approved_pct": 95.87,
+        "volume_mn": 493.0
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 1.21,
+        "bd_pct": 2.74,
+        "approved_pct": 96.05,
+        "volume_mn": 515.4
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.98,
+        "bd_pct": 2.63,
+        "approved_pct": 96.39,
+        "volume_mn": 499.8
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 1.78,
+        "bd_pct": 2.82,
+        "approved_pct": 95.41,
+        "volume_mn": 462.7
+      }
+    ],
+    "stats": {
+      "mean_td": 1.2311,
+      "std_td": 0.4888,
+      "max_td": 2.06,
+      "latest_td": 1.78,
+      "months": 18,
+      "classification": "volatile",
+      "impact_score": 5.9794,
+      "trend": "improving",
+      "mean_volume_mn": 485.7
+    }
+  },
+  {
+    "bank": "State Bank of India",
+    "role": "beneficiary",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 1.03,
+        "bd_pct": 0.57,
+        "approved_pct": 98.4,
+        "volume_mn": 3822.0
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.91,
+        "bd_pct": 0.84,
+        "approved_pct": 98.25,
+        "volume_mn": 3687.8
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.79,
+        "bd_pct": 0.63,
+        "approved_pct": 98.58,
+        "volume_mn": 3658.2
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.91,
+        "bd_pct": 0.72,
+        "approved_pct": 98.37,
+        "volume_mn": 3785.0
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.95,
+        "bd_pct": 0.71,
+        "approved_pct": 98.34,
+        "volume_mn": 3554.9
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.86,
+        "bd_pct": 1.06,
+        "approved_pct": 98.08,
+        "volume_mn": 3772.6
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.92,
+        "bd_pct": 0.95,
+        "approved_pct": 98.13,
+        "volume_mn": 3904.4
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.79,
+        "bd_pct": 0.71,
+        "approved_pct": 98.5,
+        "volume_mn": 3793.0
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 1.19,
+        "bd_pct": 1.09,
+        "approved_pct": 97.73,
+        "volume_mn": 4021.7
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 1.04,
+        "bd_pct": 0.78,
+        "approved_pct": 98.18,
+        "volume_mn": 4081.2
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 0.76,
+        "bd_pct": 0.72,
+        "approved_pct": 98.52,
+        "volume_mn": 3829.1
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 1.27,
+        "bd_pct": 0.81,
+        "approved_pct": 97.92,
+        "volume_mn": 3964.2
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.78,
+        "bd_pct": 0.97,
+        "approved_pct": 98.25,
+        "volume_mn": 3580.1
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 1.11,
+        "bd_pct": 0.95,
+        "approved_pct": 97.94,
+        "volume_mn": 3512.4
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.91,
+        "bd_pct": 0.71,
+        "approved_pct": 98.38,
+        "volume_mn": 3865.2
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.57,
+        "bd_pct": 0.9,
+        "approved_pct": 98.53,
+        "volume_mn": 4083.0
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.93,
+        "bd_pct": 0.74,
+        "approved_pct": 98.34,
+        "volume_mn": 3630.7
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 1.21,
+        "bd_pct": 1.02,
+        "approved_pct": 97.77,
+        "volume_mn": 3794.5
+      }
+    ],
+    "stats": {
+      "mean_td": 0.9406,
+      "std_td": 0.1733,
+      "max_td": 1.27,
+      "latest_td": 1.21,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 35.7098,
+      "trend": "flat",
+      "mean_volume_mn": 3796.7
+    }
+  },
+  {
+    "bank": "Kotak Mahindra Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.47,
+        "bd_pct": 1.77,
+        "approved_pct": 97.76,
+        "volume_mn": 1039.4
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.49,
+        "bd_pct": 1.81,
+        "approved_pct": 97.7,
+        "volume_mn": 1078.8
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.47,
+        "bd_pct": 1.93,
+        "approved_pct": 97.61,
+        "volume_mn": 1079.2
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.54,
+        "bd_pct": 1.79,
+        "approved_pct": 97.67,
+        "volume_mn": 1022.2
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.57,
+        "bd_pct": 1.95,
+        "approved_pct": 97.49,
+        "volume_mn": 1129.7
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.67,
+        "bd_pct": 1.77,
+        "approved_pct": 97.56,
+        "volume_mn": 1041.3
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.5,
+        "bd_pct": 2.1,
+        "approved_pct": 97.4,
+        "volume_mn": 1121.0
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.55,
+        "bd_pct": 1.87,
+        "approved_pct": 97.58,
+        "volume_mn": 1032.3
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.64,
+        "bd_pct": 1.65,
+        "approved_pct": 97.71,
+        "volume_mn": 1049.0
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.67,
+        "bd_pct": 1.61,
+        "approved_pct": 97.72,
+        "volume_mn": 1061.1
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 7.43,
+        "bd_pct": 2.02,
+        "approved_pct": 90.55,
+        "volume_mn": 1082.8
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.52,
+        "bd_pct": 1.85,
+        "approved_pct": 97.62,
+        "volume_mn": 1084.9
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.5,
+        "bd_pct": 2.11,
+        "approved_pct": 97.38,
+        "volume_mn": 1146.8
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 0.51,
+        "bd_pct": 2.0,
+        "approved_pct": 97.48,
+        "volume_mn": 1088.7
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.56,
+        "bd_pct": 1.87,
+        "approved_pct": 97.57,
+        "volume_mn": 1015.6
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.41,
+        "bd_pct": 1.89,
+        "approved_pct": 97.7,
+        "volume_mn": 1161.5
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.74,
+        "bd_pct": 1.92,
+        "approved_pct": 97.33,
+        "volume_mn": 1027.1
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.52,
+        "bd_pct": 2.0,
+        "approved_pct": 97.47,
+        "volume_mn": 1043.6
+      }
+    ],
+    "stats": {
+      "mean_td": 0.9311,
+      "std_td": 1.5783,
+      "max_td": 7.43,
+      "latest_td": 0.52,
+      "months": 18,
+      "classification": "one_off_incident",
+      "impact_score": 9.9862,
+      "trend": "worsening",
+      "mean_volume_mn": 1072.5
+    }
+  },
+  {
+    "bank": "State Bank of India",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.99,
+        "bd_pct": 3.12,
+        "approved_pct": 95.89,
+        "volume_mn": 3803.3
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.86,
+        "bd_pct": 3.17,
+        "approved_pct": 95.97,
+        "volume_mn": 3665.0
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.83,
+        "bd_pct": 3.3,
+        "approved_pct": 95.87,
+        "volume_mn": 4041.9
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.67,
+        "bd_pct": 2.94,
+        "approved_pct": 96.38,
+        "volume_mn": 3588.9
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.75,
+        "bd_pct": 3.09,
+        "approved_pct": 96.16,
+        "volume_mn": 3632.6
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.65,
+        "bd_pct": 3.15,
+        "approved_pct": 96.2,
+        "volume_mn": 3665.4
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.65,
+        "bd_pct": 3.01,
+        "approved_pct": 96.34,
+        "volume_mn": 4014.5
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.99,
+        "bd_pct": 3.0,
+        "approved_pct": 96.01,
+        "volume_mn": 3591.9
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.93,
+        "bd_pct": 3.1,
+        "approved_pct": 95.97,
+        "volume_mn": 4032.9
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 1.17,
+        "bd_pct": 3.29,
+        "approved_pct": 95.54,
+        "volume_mn": 4018.0
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 1.07,
+        "bd_pct": 3.02,
+        "approved_pct": 95.91,
+        "volume_mn": 3933.4
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 1.06,
+        "bd_pct": 3.19,
+        "approved_pct": 95.75,
+        "volume_mn": 3880.8
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.45,
+        "bd_pct": 2.89,
+        "approved_pct": 96.66,
+        "volume_mn": 4038.0
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 1.06,
+        "bd_pct": 2.9,
+        "approved_pct": 96.04,
+        "volume_mn": 3727.3
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.85,
+        "bd_pct": 2.82,
+        "approved_pct": 96.33,
+        "volume_mn": 3649.4
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.75,
+        "bd_pct": 2.9,
+        "approved_pct": 96.35,
+        "volume_mn": 3558.0
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.58,
+        "bd_pct": 3.15,
+        "approved_pct": 96.27,
+        "volume_mn": 3726.4
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.89,
+        "bd_pct": 3.17,
+        "approved_pct": 95.94,
+        "volume_mn": 3821.8
+      }
+    ],
+    "stats": {
+      "mean_td": 0.8444,
+      "std_td": 0.1902,
+      "max_td": 1.17,
+      "latest_td": 0.89,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 32.084,
+      "trend": "flat",
+      "mean_volume_mn": 3799.4
+    }
+  },
+  {
+    "bank": "Axis Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.59,
+        "bd_pct": 1.96,
+        "approved_pct": 97.45,
+        "volume_mn": 1580.0
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.56,
+        "bd_pct": 2.12,
+        "approved_pct": 97.31,
+        "volume_mn": 1492.4
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.54,
+        "bd_pct": 2.11,
+        "approved_pct": 97.35,
+        "volume_mn": 1615.7
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.76,
+        "bd_pct": 1.84,
+        "approved_pct": 97.4,
+        "volume_mn": 1548.4
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.72,
+        "bd_pct": 1.99,
+        "approved_pct": 97.28,
+        "volume_mn": 1584.2
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.61,
+        "bd_pct": 1.91,
+        "approved_pct": 97.48,
+        "volume_mn": 1520.7
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.36,
+        "bd_pct": 1.93,
+        "approved_pct": 97.71,
+        "volume_mn": 1486.6
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.52,
+        "bd_pct": 2.35,
+        "approved_pct": 97.13,
+        "volume_mn": 1697.5
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.54,
+        "bd_pct": 1.81,
+        "approved_pct": 97.65,
+        "volume_mn": 1581.5
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.59,
+        "bd_pct": 1.89,
+        "approved_pct": 97.52,
+        "volume_mn": 1673.6
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 0.54,
+        "bd_pct": 2.24,
+        "approved_pct": 97.22,
+        "volume_mn": 1472.4
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.72,
+        "bd_pct": 1.84,
+        "approved_pct": 97.43,
+        "volume_mn": 1515.4
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.61,
+        "bd_pct": 1.79,
+        "approved_pct": 97.6,
+        "volume_mn": 1724.9
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 0.68,
+        "bd_pct": 1.89,
+        "approved_pct": 97.43,
+        "volume_mn": 1650.1
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.46,
+        "bd_pct": 2.22,
+        "approved_pct": 97.32,
+        "volume_mn": 1569.1
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.4,
+        "bd_pct": 2.14,
+        "approved_pct": 97.46,
+        "volume_mn": 1491.5
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.76,
+        "bd_pct": 2.16,
+        "approved_pct": 97.08,
+        "volume_mn": 1534.4
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.54,
+        "bd_pct": 2.11,
+        "approved_pct": 97.35,
+        "volume_mn": 1502.9
+      }
+    ],
+    "stats": {
+      "mean_td": 0.5833,
+      "std_td": 0.1109,
+      "max_td": 0.76,
+      "latest_td": 0.54,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 9.1523,
+      "trend": "flat",
+      "mean_volume_mn": 1569.0
+    }
+  },
+  {
+    "bank": "ICICI Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.48,
+        "bd_pct": 2.64,
+        "approved_pct": 96.88,
+        "volume_mn": 2262.2
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.31,
+        "bd_pct": 2.29,
+        "approved_pct": 97.4,
+        "volume_mn": 2040.1
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.27,
+        "bd_pct": 2.6,
+        "approved_pct": 97.12,
+        "volume_mn": 2185.5
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.44,
+        "bd_pct": 2.58,
+        "approved_pct": 96.98,
+        "volume_mn": 2086.9
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.44,
+        "bd_pct": 2.3,
+        "approved_pct": 97.26,
+        "volume_mn": 2133.7
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.53,
+        "bd_pct": 2.49,
+        "approved_pct": 96.98,
+        "volume_mn": 2143.4
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.37,
+        "bd_pct": 2.78,
+        "approved_pct": 96.85,
+        "volume_mn": 2227.9
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.49,
+        "bd_pct": 2.4,
+        "approved_pct": 97.11,
+        "volume_mn": 2099.0
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.47,
+        "bd_pct": 2.19,
+        "approved_pct": 97.34,
+        "volume_mn": 2116.2
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.61,
+        "bd_pct": 2.29,
+        "approved_pct": 97.1,
+        "volume_mn": 2328.2
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 0.35,
+        "bd_pct": 2.39,
+        "approved_pct": 97.26,
+        "volume_mn": 2227.0
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.39,
+        "bd_pct": 2.44,
+        "approved_pct": 97.18,
+        "volume_mn": 2190.6
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.45,
+        "bd_pct": 2.69,
+        "approved_pct": 96.86,
+        "volume_mn": 2184.7
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 0.39,
+        "bd_pct": 2.45,
+        "approved_pct": 97.16,
+        "volume_mn": 2171.9
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.54,
+        "bd_pct": 2.45,
+        "approved_pct": 97.01,
+        "volume_mn": 2098.5
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.39,
+        "bd_pct": 2.61,
+        "approved_pct": 97.0,
+        "volume_mn": 2361.3
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.43,
+        "bd_pct": 2.69,
+        "approved_pct": 96.88,
+        "volume_mn": 2316.4
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.45,
+        "bd_pct": 2.27,
+        "approved_pct": 97.29,
+        "volume_mn": 2271.4
+      }
+    ],
+    "stats": {
+      "mean_td": 0.4333,
+      "std_td": 0.0809,
+      "max_td": 0.61,
+      "latest_td": 0.45,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 9.496,
+      "trend": "flat",
+      "mean_volume_mn": 2191.4
+    }
+  },
+  {
+    "bank": "HDFC Bank",
+    "role": "remitter",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.29,
+        "bd_pct": 2.07,
+        "approved_pct": 97.64,
+        "volume_mn": 2699.2
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.35,
+        "bd_pct": 1.92,
+        "approved_pct": 97.73,
+        "volume_mn": 2962.0
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.35,
+        "bd_pct": 2.01,
+        "approved_pct": 97.64,
+        "volume_mn": 2869.6
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.11,
+        "bd_pct": 2.21,
+        "approved_pct": 97.68,
+        "volume_mn": 2968.4
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.25,
+        "bd_pct": 2.15,
+        "approved_pct": 97.6,
+        "volume_mn": 2817.6
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.28,
+        "bd_pct": 1.88,
+        "approved_pct": 97.84,
+        "volume_mn": 3016.9
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.18,
+        "bd_pct": 2.02,
+        "approved_pct": 97.8,
+        "volume_mn": 2645.3
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.38,
+        "bd_pct": 2.17,
+        "approved_pct": 97.45,
+        "volume_mn": 3023.3
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.24,
+        "bd_pct": 2.16,
+        "approved_pct": 97.6,
+        "volume_mn": 2577.6
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.43,
+        "bd_pct": 2.14,
+        "approved_pct": 97.43,
+        "volume_mn": 2724.8
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 0.29,
+        "bd_pct": 1.97,
+        "approved_pct": 97.74,
+        "volume_mn": 2847.6
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.2,
+        "bd_pct": 1.99,
+        "approved_pct": 97.81,
+        "volume_mn": 2784.3
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.39,
+        "bd_pct": 2.05,
+        "approved_pct": 97.55,
+        "volume_mn": 2598.5
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 0.38,
+        "bd_pct": 2.16,
+        "approved_pct": 97.46,
+        "volume_mn": 2819.1
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.27,
+        "bd_pct": 2.04,
+        "approved_pct": 97.69,
+        "volume_mn": 2782.8
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.34,
+        "bd_pct": 2.08,
+        "approved_pct": 97.58,
+        "volume_mn": 2587.5
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.21,
+        "bd_pct": 2.12,
+        "approved_pct": 97.67,
+        "volume_mn": 2903.5
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.2,
+        "bd_pct": 2.13,
+        "approved_pct": 97.67,
+        "volume_mn": 2766.6
+      }
+    ],
+    "stats": {
+      "mean_td": 0.2856,
+      "std_td": 0.0839,
+      "max_td": 0.43,
+      "latest_td": 0.2,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 7.9947,
+      "trend": "flat",
+      "mean_volume_mn": 2799.7
+    }
+  },
+  {
+    "bank": "HDFC Bank",
+    "role": "beneficiary",
+    "series": [
+      {
+        "month": "2024-09",
+        "td_pct": 0.36,
+        "bd_pct": 0.67,
+        "approved_pct": 98.97,
+        "volume_mn": 2846.5
+      },
+      {
+        "month": "2024-10",
+        "td_pct": 0.2,
+        "bd_pct": 0.24,
+        "approved_pct": 99.5,
+        "volume_mn": 2923.6
+      },
+      {
+        "month": "2024-11",
+        "td_pct": 0.26,
+        "bd_pct": 0.48,
+        "approved_pct": 99.26,
+        "volume_mn": 2898.9
+      },
+      {
+        "month": "2024-12",
+        "td_pct": 0.22,
+        "bd_pct": 0.5,
+        "approved_pct": 99.27,
+        "volume_mn": 2916.7
+      },
+      {
+        "month": "2025-01",
+        "td_pct": 0.18,
+        "bd_pct": 0.43,
+        "approved_pct": 99.39,
+        "volume_mn": 2927.5
+      },
+      {
+        "month": "2025-02",
+        "td_pct": 0.31,
+        "bd_pct": 0.55,
+        "approved_pct": 99.13,
+        "volume_mn": 3017.4
+      },
+      {
+        "month": "2025-03",
+        "td_pct": 0.29,
+        "bd_pct": 0.46,
+        "approved_pct": 99.25,
+        "volume_mn": 2896.9
+      },
+      {
+        "month": "2025-04",
+        "td_pct": 0.16,
+        "bd_pct": 0.35,
+        "approved_pct": 99.48,
+        "volume_mn": 2667.2
+      },
+      {
+        "month": "2025-05",
+        "td_pct": 0.3,
+        "bd_pct": 0.4,
+        "approved_pct": 99.3,
+        "volume_mn": 2854.1
+      },
+      {
+        "month": "2025-06",
+        "td_pct": 0.09,
+        "bd_pct": 0.42,
+        "approved_pct": 99.49,
+        "volume_mn": 2627.7
+      },
+      {
+        "month": "2025-07",
+        "td_pct": 0.35,
+        "bd_pct": 0.42,
+        "approved_pct": 99.23,
+        "volume_mn": 2980.5
+      },
+      {
+        "month": "2025-08",
+        "td_pct": 0.2,
+        "bd_pct": 0.5,
+        "approved_pct": 99.3,
+        "volume_mn": 2869.9
+      },
+      {
+        "month": "2025-09",
+        "td_pct": 0.3,
+        "bd_pct": 0.56,
+        "approved_pct": 99.14,
+        "volume_mn": 2697.7
+      },
+      {
+        "month": "2025-10",
+        "td_pct": 0.22,
+        "bd_pct": 0.55,
+        "approved_pct": 99.23,
+        "volume_mn": 2785.4
+      },
+      {
+        "month": "2025-11",
+        "td_pct": 0.2,
+        "bd_pct": 0.46,
+        "approved_pct": 99.34,
+        "volume_mn": 2889.4
+      },
+      {
+        "month": "2025-12",
+        "td_pct": 0.16,
+        "bd_pct": 0.29,
+        "approved_pct": 99.5,
+        "volume_mn": 2892.9
+      },
+      {
+        "month": "2026-01",
+        "td_pct": 0.21,
+        "bd_pct": 0.3,
+        "approved_pct": 99.49,
+        "volume_mn": 2795.9
+      },
+      {
+        "month": "2026-02",
+        "td_pct": 0.34,
+        "bd_pct": 0.47,
+        "approved_pct": 99.19,
+        "volume_mn": 2888.4
+      }
+    ],
+    "stats": {
+      "mean_td": 0.2417,
+      "std_td": 0.0734,
+      "max_td": 0.36,
+      "latest_td": 0.34,
+      "months": 18,
+      "classification": "rock_solid",
+      "impact_score": 6.8978,
+      "trend": "flat",
+      "mean_volume_mn": 2854.3
+    }
+  }
+]

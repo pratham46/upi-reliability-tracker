@@ -1,0 +1,13 @@
+Bank,Role,Approved %,Business Decline %,Technical Decline %,Volume (Mn)
+HDFC Bank,remitter,97.74,1.97,0.29,2847.6
+ICICI Bank,remitter,97.26,2.39,0.35,2227.0
+Axis Bank,remitter,97.22,2.24,0.54,1472.4
+State Bank of India,remitter,95.91,3.02,1.07,3933.4
+Punjab National Bank,remitter,93.95,3.98,2.08,802.2
+Bank of Baroda,remitter,93.97,3.89,2.13,632.3
+Canara Bank,remitter,94.84,3.77,1.39,559.0
+Kotak Mahindra Bank,remitter,90.55,2.02,7.43,1082.8
+IndusInd Bank,remitter,96.11,2.88,1.02,473.9
+HDFC Bank,beneficiary,99.23,0.42,0.35,2980.5
+State Bank of India,beneficiary,98.52,0.72,0.76,3829.1
+Punjab National Bank,beneficiary,96.91,0.6,2.49,810.8
