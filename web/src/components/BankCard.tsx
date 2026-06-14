@@ -22,7 +22,7 @@ export default function BankCard({ bank, rank }: { bank: BankEntry; rank?: numbe
       onClick={go}
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter') go() }}
-      aria-label={`${bank.bank} — fails ${stats.mean_td.toFixed(2)}% of the time on average, ${tdLabel(stats.mean_td)}`}
+      aria-label={`${bank.bank} — Technical Decline rate: ${stats.mean_td.toFixed(2)}% average, ${tdLabel(stats.mean_td)}`}
       role="article"
     >
       {/* Header */}
@@ -51,7 +51,7 @@ export default function BankCard({ bank, rank }: { bank: BankEntry; rank?: numbe
           >
             {stats.mean_td.toFixed(2)}%
           </div>
-          <div className="text-[11px] text-ink-faint mt-1.5">avg bank-fault failures</div>
+          <div className="text-[11px] text-ink-faint mt-1.5">avg Technical Decline rate</div>
         </div>
         <div className="flex flex-col items-end gap-1.5">
           <Sparkline values={bank.series.map((s) => s.td_pct)} width={96} height={32} />

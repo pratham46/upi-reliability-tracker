@@ -62,17 +62,17 @@ export default function BankDetail({ allBanks, loading, error }: Props) {
 
   const STAT_ITEMS = [
     {
-      label: 'Typical failure rate',
-      tip: "How often the bank's own systems fail, averaged across months. Not your wrong PIN — the bank breaking.",
+      label: 'Avg Technical Decline',
+      tip: "How often the bank recorded a Technical Decline (system-side processing issue), averaged across months in the data. Excludes user-side Business Declines.",
       value: stats.mean_td.toFixed(2) + '%',
       sub: tdLabel(stats.mean_td),
       color,
     },
     {
-      label: 'Worst month',
-      tip: 'The single highest failure rate this bank hit in the data.',
+      label: 'Peak TD month',
+      tip: 'The single highest Technical Decline rate this bank recorded in the dataset.',
       value: stats.max_td.toFixed(2) + '%',
-      sub: 'peak failures',
+      sub: 'peak TD',
       color: '#F2691C',
     },
     {
@@ -160,25 +160,25 @@ export default function BankDetail({ allBanks, loading, error }: Props) {
           ₹
         </div>
         <p className="text-sm text-ink leading-relaxed">
-          <strong>In plain English:</strong> when you {bank.role === 'remitter' ? 'pay from' : 'receive into'} {bank.bank},
-          about <strong style={{ color }}>{stats.mean_td.toFixed(1)} in every 100</strong> payments fail because of the bank's
-          own systems. {trendPlain(stats.trend)}
+          <strong>In plain English:</strong> for transactions {bank.role === 'remitter' ? 'sent from' : 'received into'} {bank.bank},
+          approximately <strong style={{ color }}>{stats.mean_td.toFixed(1)} in every 100</strong> were recorded as Technical Declines
+          (system-side processing issues) in the NPCI data. {trendPlain(stats.trend)}
         </p>
       </div>
 
       {/* TD trend */}
       <section className="card p-5 sm:p-6" aria-label="Failure rate over time">
         <h2 className="font-display font-bold text-lg text-ink mb-1 flex items-center gap-2">
-          Failure rate, month by month
-          <InfoTip label="About this chart">Each point is one month. Lower is better. The dotted red line marks a major outage month.</InfoTip>
+          Technical Decline rate, month by month
+          <InfoTip label="About this chart">Each point is one month of NPCI data. Lower is better. The dotted line marks a month where TD was notably elevated.</InfoTip>
         </h2>
-        <p className="text-sm text-ink-soft mb-5">How often the bank's systems failed. ▲ marks a standout bad month.</p>
+        <p className="text-sm text-ink-soft mb-5">Monthly Technical Decline rate from NPCI data. ▲ marks a month with a notably higher TD rate.</p>
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={chartData} margin={{ top: 10, right: 16, left: -6, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3,4" stroke={c.grid} strokeOpacity={0.7} />
             <XAxis dataKey="month" tick={{ fill: c.axis, fontSize: 10, fontFamily: 'JetBrains Mono, monospace' }} stroke={c.grid} />
             <YAxis tick={{ fill: c.axis, fontSize: 10, fontFamily: 'JetBrains Mono, monospace' }} tickFormatter={(v) => `${v}%`} stroke={c.grid} />
-            <Tooltip contentStyle={c.tooltip} formatter={(v: number) => [`${v?.toFixed(2)}% failed`, "Bank's fault"]} />
+            <Tooltip contentStyle={c.tooltip} formatter={(v: number) => [`${v?.toFixed(2)}%`, 'Technical Decline (TD)']} />
             {outageMonths.map((m) => (
               <ReferenceLine key={m} x={m} stroke="#DC2828" strokeDasharray="4,4" strokeWidth={1.5} label={{ value: '▲', fill: '#DC2828', fontSize: 11 }} />
             ))}
@@ -198,10 +198,10 @@ export default function BankDetail({ allBanks, loading, error }: Props) {
       {/* BD vs TD */}
       <section className="card p-5 sm:p-6" aria-label="Bank's fault vs your situation">
         <h2 className="font-display font-bold text-lg text-ink mb-1 flex items-center gap-2">
-          Whose "fault" were the failures?
-          <InfoTip label="Two kinds of failure">Red = the bank broke (its fault). Amber = your situation (wrong PIN, low balance). We only judge banks on the red.</InfoTip>
+          Technical vs. Business Declines
+          <InfoTip label="Two types of decline">Red = Technical Decline (system-side processing issue). Amber = Business Decline (user-side: wrong PIN, low balance). We only measure banks on TD.</InfoTip>
         </h2>
-        <p className="text-sm text-ink-soft mb-5">Red is the bank's fault. Amber is user-side (wrong PIN, low balance). Stacked = total failures.</p>
+        <p className="text-sm text-ink-soft mb-5">Red = Technical Decline (system-side). Amber = Business Decline (user-side). Stacked = total declined transactions.</p>
         <ResponsiveContainer width="100%" height={240}>
           <AreaChart data={chartData} margin={{ top: 10, right: 16, left: -6, bottom: 0 }}>
             <defs>
@@ -219,8 +219,8 @@ export default function BankDetail({ allBanks, loading, error }: Props) {
             <YAxis tick={{ fill: c.axis, fontSize: 10, fontFamily: 'JetBrains Mono, monospace' }} tickFormatter={(v) => `${v}%`} stroke={c.grid} />
             <Tooltip contentStyle={c.tooltip} formatter={(v: number) => [`${v?.toFixed(2)}%`]} />
             <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'Hanken Grotesk, sans-serif' }} />
-            <Area type="monotone" dataKey="bd" stackId="1" stroke="#E5A50A" strokeWidth={1.5} fill="url(#gradBD)" name="Your situation (BD)" />
-            <Area type="monotone" dataKey="td" stackId="1" stroke="#DC2828" strokeWidth={2} fill="url(#gradTD)" name="Bank's fault (TD)" />
+            <Area type="monotone" dataKey="bd" stackId="1" stroke="#E5A50A" strokeWidth={1.5} fill="url(#gradBD)" name="Business Decline (BD)" />
+            <Area type="monotone" dataKey="td" stackId="1" stroke="#DC2828" strokeWidth={2} fill="url(#gradTD)" name="Technical Decline (TD)" />
           </AreaChart>
         </ResponsiveContainer>
       </section>

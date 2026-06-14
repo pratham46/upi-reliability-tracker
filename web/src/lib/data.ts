@@ -41,20 +41,20 @@ export function tdLabel(td: number | null): string {
 /** Plain-English, finance-free description of a TD% value. */
 export function tdPlain(td: number | null): string {
   if (td === null) return 'No data for this month.';
-  if (td < 0.5) return 'Almost never breaks. Pay with confidence.';
-  if (td < 1.0) return 'Reliable. The odd hiccup, nothing more.';
-  if (td < 1.5) return 'Mostly fine, but you may hit failures now and then.';
-  if (td < 3.0) return 'Fails noticeably often — through no fault of yours.';
-  return 'Frequently broken. Expect payments to fail.';
+  if (td < 0.5) return 'Very low Technical Decline rate — highly reliable in this period.';
+  if (td < 1.0) return 'Low Technical Decline rate. Occasional processing issues, nothing sustained.';
+  if (td < 1.5) return 'Moderate Technical Decline rate — some processing issues recorded in this period.';
+  if (td < 3.0) return 'Above-average Technical Decline rate recorded across this period.';
+  return 'High Technical Decline rate recorded. Payments faced frequent processing-side issues.';
 }
 
 /* ---- Classification ---- */
 export function classificationLabel(c: string): string {
   const map: Record<string, string> = {
     rock_solid: 'Rock Solid',
-    chronically_weak: 'Always Shaky',
-    one_off_incident: 'One Bad Month',
-    volatile: 'Unpredictable',
+    chronically_weak: 'Recurring Declines',
+    one_off_incident: 'Isolated Incident',
+    volatile: 'Variable Pattern',
   };
   return map[c] ?? c;
 }
@@ -82,10 +82,10 @@ export function classificationIcon(c: string): string {
 /** Plain-English one-liner for each classification. */
 export function classificationPlain(c: string): string {
   const map: Record<string, string> = {
-    rock_solid: 'Consistently works. Boring in the best way.',
-    chronically_weak: 'Fails often, month after month — a pattern, not bad luck.',
-    one_off_incident: 'Usually fine, but had one big outage you can see.',
-    volatile: 'All over the place — great one month, rough the next.',
+    rock_solid: 'Low, consistent Technical Decline rate across the observed period.',
+    chronically_weak: 'Elevated Technical Decline rate recorded consistently across multiple months in the data.',
+    one_off_incident: 'Generally low TD rate, with one month showing a notable spike in the data.',
+    volatile: 'Technical Decline rate varies significantly month-to-month — no clear stable pattern.',
   };
   return map[c] ?? '';
 }
@@ -100,9 +100,9 @@ export function trendColor(t: string): string {
 export function trendPlain(t: string): string {
   return (
     {
-      improving: 'Getting more reliable over time.',
-      worsening: 'Getting worse over time.',
-      flat: 'Holding steady — no real change.',
+      improving: 'Technical Decline rate has been trending lower over time.',
+      worsening: 'Technical Decline rate has been trending higher in recent data.',
+      flat: 'Technical Decline rate has remained broadly stable.',
     } as Record<string, string>
   )[t] ?? '';
 }

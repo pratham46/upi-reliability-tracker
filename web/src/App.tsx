@@ -6,6 +6,7 @@ import ReliabilityMap from './pages/ReliabilityMap'
 import BankDetail from './pages/BankDetail'
 import Compare from './pages/Compare'
 import About from './pages/About'
+import Disclaimer from './pages/Disclaimer'
 import Logo from './components/Logo'
 import ThemeToggle from './components/ThemeToggle'
 import { useData } from './lib/useData'
@@ -187,21 +188,32 @@ export default function App() {
             <Route path="/bank/:bankName" element={<BankDetail {...sharedProps} />} />
             <Route path="/compare" element={<Compare {...sharedProps} />} />
             <Route path="/about" element={<About meta={meta} />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
           </Routes>
         </motion.div>
       </main>
 
       <footer style={{ borderTop: '1px solid var(--glass-border)' }} className="mt-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-5 pb-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
           <div className="flex items-center gap-2">
             <Logo size={22} animated={false} />
             <span>Data: {meta?.source ?? 'NPCI UPI Ecosystem Statistics'}</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap justify-center">
             <span>Updated {meta?.last_updated ?? '—'}</span>
             <span className="hidden sm:inline">·</span>
             <span>Static site · no tracking · ₹0 to run</span>
+            <span className="hidden sm:inline">·</span>
+            <Link to="/disclaimer" className="hover:text-upi-orange-deep transition-colors font-medium">
+              Disclaimer &amp; Terms
+            </Link>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-4">
+          <p className="text-[10px] text-ink-faint text-center sm:text-left leading-relaxed">
+            For informational purposes only. Data sourced from NPCI public reports. Not financial advice. Not affiliated with NPCI or any bank.{' '}
+            <Link to="/disclaimer" className="underline hover:text-upi-orange-deep transition-colors">Full disclaimer →</Link>
+          </p>
         </div>
       </footer>
     </div>

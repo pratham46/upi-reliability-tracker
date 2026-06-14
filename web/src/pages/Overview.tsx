@@ -32,23 +32,23 @@ const CONCEPTS = [
   {
     accent: '#DC2828',
     abbr: 'TD',
-    title: "Bank's fault",
-    term: 'Technical Decline',
-    body: "The bank's own systems broke — like an ATM that's out of order. Nothing you did. This is what we rank on.",
+    title: 'Technical Decline',
+    term: 'System-side processing issue',
+    body: "The payment system returned a technical error — like a temporary server issue. Your inputs were correct. This is the metric we measure banks on.",
   },
   {
     accent: '#E5A50A',
     abbr: 'BD',
-    title: 'Your situation',
-    term: 'Business Decline',
-    body: 'Wrong PIN, low balance, daily limit hit. Real failures, but not the bank breaking. We leave these out of the ranking.',
+    title: 'Business Decline',
+    term: 'User-side condition',
+    body: 'Wrong PIN, insufficient balance, daily limit reached. These reflect the transaction context, not a bank system issue. We exclude these from rankings.',
   },
   {
     accent: '#12A150',
     abbr: 'Σ×',
-    title: 'How many people',
-    term: 'Impact',
-    body: 'A giant bank failing 1% of the time hurts far more people than a tiny one failing 5%. We weigh failures by size.',
+    title: 'Estimated Impact',
+    term: 'Transactions affected',
+    body: 'A bank processing large volumes will affect more transactions even at a low TD rate. We weight TD rates by transaction volume for a fuller picture.',
   },
 ]
 
@@ -88,24 +88,35 @@ export default function Overview(props: Props) {
   return (
     <div>
       {/* Hero */}
-      <section className="grid lg:grid-cols-2 gap-8 items-center mb-12" aria-label="Introduction">
+      <section className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-12" aria-label="Introduction">
+        {/* Animation — above text on mobile, right column on desktop */}
         <motion.div
+          className="order-1 lg:order-2 w-full"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+        >
+          <HeroArt />
+        </motion.div>
+
+        {/* Text — below animation on mobile, left column on desktop */}
+        <motion.div
+          className="order-2 lg:order-1"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
         >
           <span className="chip bg-upi-orange/12 text-upi-orange-deep mb-4 border border-upi-orange/20">
             <span className="h-1.5 w-1.5 rounded-full bg-upi-orange animate-pulse" /> Built from NPCI public data
           </span>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] text-ink mb-4">
-            Which banks{' '}
-            <span className="text-gradient-orange">actually work</span>{' '}
-            on UPI?
+            UPI reliability,{' '}
+            <span className="text-gradient-orange">bank by bank</span>
           </h1>
           <p className="text-ink-soft text-base leading-relaxed mb-6 max-w-lg">
-            Every UPI payment runs through your bank. Some banks quietly fail far more often than
-            others — and it's <strong className="text-ink">never your fault</strong>. We stacked{' '}
-            {allMonths.length} months of official data to show you who's reliable, in plain English.
+            Every UPI payment is processed through your bank. Technical Decline rates — system-side
+            processing issues — vary across banks. We analysed{' '}
+            {allMonths.length} months of NPCI's public data to present those patterns clearly, in plain English.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -126,15 +137,6 @@ export default function Overview(props: Props) {
               How does this work?
             </Link>
           </div>
-        </motion.div>
-
-        <motion.div
-          className="hidden sm:block"
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-        >
-          <HeroArt />
         </motion.div>
       </section>
 
@@ -160,7 +162,7 @@ export default function Overview(props: Props) {
                 <CountUp to={weakCount} />
               </div>
               <div className="text-sm text-ink-soft mt-2 font-medium">
-                {weakCount === 1 ? 'bank' : 'banks'} with issues
+                {weakCount === 1 ? 'bank' : 'banks'} with elevated TD
               </div>
             </div>
             <div className="text-4xl sm:text-5xl text-ink-faint font-light select-none" aria-hidden="true">→</div>
@@ -175,15 +177,15 @@ export default function Overview(props: Props) {
             </div>
           </div>
           <p className="text-ink-soft text-sm max-w-xl mx-auto leading-relaxed">
-            A handful of repeat offenders drag down the whole system. Here's the full picture, month by month.
+            A smaller number of banks account for a disproportionate share of system-side processing failures. Here's the full picture, month by month.
           </p>
         </div>
       </motion.div>
 
       {/* How to read this */}
       <section className="mb-12" aria-label="Plain-language explainer">
-        <h2 className="font-display font-bold text-xl text-ink mb-1">First, two kinds of failure</h2>
-        <p className="text-ink-soft text-sm mb-5">When a UPI payment fails, it's one of two things. We only judge banks on the first.</p>
+        <h2 className="font-display font-bold text-xl text-ink mb-1">Two types of payment decline</h2>
+        <p className="text-ink-soft text-sm mb-5">When a UPI payment is declined, NPCI categorises it into two types. We only measure banks on the first.</p>
         <div className="grid sm:grid-cols-3 gap-4">
           {CONCEPTS.map((c, i) => (
             <motion.div
@@ -239,18 +241,18 @@ export default function Overview(props: Props) {
       <div className="grid lg:grid-cols-2 gap-8">
         <section aria-label="Least reliable banks">
           <h2 className="font-display font-bold text-lg text-rel-critical mb-1 flex items-center gap-2">
-            <span aria-hidden="true">▲</span> Avoid if you can
+            <span aria-hidden="true">▲</span> Higher TD Rates
           </h2>
-          <p className="text-sm text-ink-soft mb-4">Highest "bank's-fault" failure rates in your selected window.</p>
+          <p className="text-sm text-ink-soft mb-4">Highest Technical Decline rates in your selected window, per NPCI data.</p>
           <div className="flex flex-col gap-3">
             {worst3.map((b, i) => <BankCard key={`${b.bank}-${b.role}`} bank={b} rank={i} />)}
           </div>
         </section>
         <section aria-label="Most reliable banks">
           <h2 className="font-display font-bold text-lg text-rel-excellent mb-1 flex items-center gap-2">
-            <span aria-hidden="true">◆</span> Safest bets
+            <span aria-hidden="true">◆</span> Lower TD Rates
           </h2>
-          <p className="text-sm text-ink-soft mb-4">These banks' systems rarely let you down.</p>
+          <p className="text-sm text-ink-soft mb-4">Banks with consistently low Technical Decline rates in your selected window.</p>
           <div className="flex flex-col gap-3">
             {best3.map((b, i) => <BankCard key={`${b.bank}-${b.role}`} bank={b} rank={i} />)}
           </div>

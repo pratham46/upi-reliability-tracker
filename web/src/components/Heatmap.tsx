@@ -113,7 +113,8 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: (bi * months.length + mi) * 0.003, duration: 0.28 }}
                       style={{ transformOrigin: `${cx + CELL_W / 2}px ${y + CELL_H / 2}px` }}
-                      onMouseEnter={() => setHover({ bank: bank.bank, month: m, td })}
+                      onMouseEnter={(e) => { setCursor({ x: e.clientX, y: e.clientY }); setHover({ bank: bank.bank, month: m, td }) }}
+                      onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
                       onMouseLeave={() => setHover(null)}
                     >
                       <rect
