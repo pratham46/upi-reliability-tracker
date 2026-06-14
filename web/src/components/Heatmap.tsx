@@ -35,7 +35,6 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
 
   return (
     <div className="relative">
-      {/* Mobile scroll hint */}
       <p className="sm:hidden text-xs text-ink-faint mb-2 flex items-center gap-1">
         <span aria-hidden="true">←</span> Scroll to see all months · Tap a row for details
       </p>
@@ -64,6 +63,7 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
               fontSize={9}
               className="fill-ink-faint"
               fontFamily="JetBrains Mono, monospace"
+              fontWeight={500}
             >
               {formatMonth(m)}
             </text>
@@ -86,11 +86,10 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onBankClick(bank) }}
               >
-                {/* row hover background */}
-                <rect x={0} y={y} width={totalW} height={CELL_H} fill="transparent" className="hover:fill-surface-sunken" />
-                {/* classification marker */}
-                <text x={10} y={y + CELL_H / 2 + 4} fontSize={12} fill={cColor}>{classificationIcon(bank.stats.classification)}</text>
-                {/* Bank label */}
+                <rect x={0} y={y} width={totalW} height={CELL_H} fill="transparent" className="hover:fill-surface-sunken/40" />
+                <text x={10} y={y + CELL_H / 2 + 4} fontSize={12} fill={cColor} fontWeight={600}>
+                  {classificationIcon(bank.stats.classification)}
+                </text>
                 <text
                   x={28}
                   y={y + CELL_H / 2 + 4}
@@ -110,9 +109,9 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
                   return (
                     <motion.g
                       key={m}
-                      initial={{ opacity: 0, scale: 0.6 }}
+                      initial={{ opacity: 0, scale: 0.55 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: (bi * months.length + mi) * 0.004, duration: 0.3 }}
+                      transition={{ delay: (bi * months.length + mi) * 0.003, duration: 0.28 }}
                       style={{ transformOrigin: `${cx + CELL_W / 2}px ${y + CELL_H / 2}px` }}
                       onMouseEnter={() => setHover({ bank: bank.bank, month: m, td })}
                       onMouseLeave={() => setHover(null)}
@@ -122,9 +121,9 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
                         y={y + 3}
                         width={CELL_W - 4}
                         height={CELL_H - 6}
-                        rx={6}
+                        rx={7}
                         fill={color}
-                        fillOpacity={td === null ? 0.18 : 0.92}
+                        fillOpacity={td === null ? 0.14 : 0.90}
                         role="cell"
                         aria-label={`${bank.bank}, ${m}: ${td !== null ? td.toFixed(2) + '% failures' : 'no data'} (${tdLabel(td)})`}
                       />
@@ -134,7 +133,7 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
                           y={y + CELL_H / 2 + 4}
                           textAnchor="middle"
                           fontSize={9.5}
-                          fill={td >= 1.5 ? '#fff' : '#143018'}
+                          fill={td >= 1.5 ? '#fff' : '#0C2214'}
                           fontFamily="JetBrains Mono, monospace"
                           fontWeight={600}
                           pointerEvents="none"
@@ -151,21 +150,26 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
         </svg>
       </div>
 
-      {/* Viewport-fixed tooltip — works even when SVG is scrolled horizontally */}
+      {/* Glass tooltip */}
       {hover && (
         <div
-          className="pointer-events-none fixed z-50 w-52 rounded-xl bg-upi-ink px-3 py-2 text-white shadow-lift"
+          className="pointer-events-none fixed z-50 w-56 rounded-xl px-3.5 py-3"
           style={{
-            left: Math.min(cursor.x + 16, window.innerWidth - 224),
-            top: Math.min(cursor.y + 16, window.innerHeight - 120),
+            left: Math.min(cursor.x + 16, window.innerWidth - 240),
+            top: Math.min(cursor.y + 16, window.innerHeight - 130),
+            background: 'var(--glass-bg)',
+            border: '1px solid var(--glass-border)',
+            backdropFilter: 'blur(18px) saturate(165%)',
+            WebkitBackdropFilter: 'blur(18px) saturate(165%)',
+            boxShadow: 'var(--glass-shadow), inset 0 1px 0 var(--glass-inset)',
           }}
         >
-          <div className="text-xs font-semibold">{hover.bank}</div>
-          <div className="text-[11px] text-white/60">{formatMonth(hover.month)}</div>
-          <div className="mt-1 text-sm font-mono" style={{ color: tdColor(hover.td) }}>
+          <div className="text-xs font-semibold text-ink truncate">{hover.bank}</div>
+          <div className="text-[10px] text-ink-faint font-mono">{formatMonth(hover.month)}</div>
+          <div className="mt-1.5 text-base font-display font-bold tabular-nums" style={{ color: tdColor(hover.td) }}>
             {hover.td !== null ? `${hover.td.toFixed(2)}% failed` : 'No data'}
           </div>
-          <div className="mt-1 text-[11px] leading-snug text-white/80">{tdPlain(hover.td)}</div>
+          <div className="mt-0.5 text-[11px] leading-snug text-ink-soft">{tdPlain(hover.td)}</div>
         </div>
       )}
 
@@ -180,7 +184,7 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
           { color: '#DC2828', label: '3%+ · Critical' },
         ].map(({ color, label }) => (
           <span key={label} className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded" style={{ background: color }} aria-hidden="true" />
+            <span className="h-3 w-3 rounded-md" style={{ background: color }} aria-hidden="true" />
             {label}
           </span>
         ))}

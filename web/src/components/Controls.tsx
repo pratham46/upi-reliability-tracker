@@ -43,7 +43,10 @@ export default function Controls({
             and poor at the other.
           </InfoTip>
         </legend>
-        <div className="flex rounded-xl bg-surface-sunken p-1 border border-line">
+        <div
+          className="flex rounded-xl p-1 gap-1"
+          style={{ background: 'rgb(var(--surface-sunken) / 0.75)', border: '1px solid var(--glass-border)' }}
+        >
           {[
             { key: 'remitter', label: 'Sending money' },
             { key: 'beneficiary', label: 'Receiving money' },
@@ -51,9 +54,15 @@ export default function Controls({
             <button
               key={r.key}
               onClick={() => setRole(r.key)}
-              className={`flex-1 sm:flex-none px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-                role === r.key ? 'bg-surface text-upi-orange shadow-card' : 'text-ink-soft hover:text-ink'
-              }`}
+              className="flex-1 sm:flex-none px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200"
+              style={role === r.key ? {
+                background: 'var(--glass-bg)',
+                color: '#E2540B',
+                border: '1px solid rgba(255,106,26,0.24)',
+                boxShadow: '0 1px 3px rgba(8,16,46,0.06), 0 0 0 1px rgba(255,106,26,0.14)',
+              } : {
+                color: 'rgb(var(--ink-soft))',
+              }}
               aria-pressed={role === r.key}
             >
               {r.label}
@@ -69,7 +78,7 @@ export default function Controls({
           id="sort-key"
           value={sortKey}
           onChange={(e) => setSortKey(e.target.value as SortKey)}
-          className="w-full sm:w-auto bg-surface border border-line text-ink text-sm font-medium rounded-xl px-3 py-2 focus:border-upi-orange outline-none cursor-pointer"
+          className="w-full sm:w-auto glass-input px-3 py-2 cursor-pointer"
         >
           {SORT_OPTIONS.map((o) => (
             <option key={o.value} value={o.value}>{o.label}</option>
@@ -86,7 +95,7 @@ export default function Controls({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="e.g. SBI, HDFC…"
-          className="w-full sm:w-44 bg-surface border border-line text-ink text-sm rounded-xl px-3 py-2 focus:border-upi-orange outline-none placeholder:text-ink-faint"
+          className="w-full sm:w-44 glass-input px-3 py-2"
           aria-label="Search bank by name"
         />
       </div>
@@ -96,7 +105,7 @@ export default function Controls({
         <div className="w-full sm:flex-1">
           <div className="eyebrow mb-2 flex justify-between items-center">
             <span>Time window</span>
-            <span className="text-ink-soft font-mono normal-case tracking-normal text-xs">
+            <span className="text-ink-soft font-mono normal-case tracking-normal text-xs tabular-nums">
               {formatMonth(allMonths[start])} → {formatMonth(allMonths[end])}
             </span>
           </div>

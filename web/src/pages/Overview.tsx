@@ -31,21 +31,21 @@ interface Props {
 const CONCEPTS = [
   {
     accent: '#DC2828',
-    icon: '🏦',
+    abbr: 'TD',
     title: "Bank's fault",
     term: 'Technical Decline',
     body: "The bank's own systems broke — like an ATM that's out of order. Nothing you did. This is what we rank on.",
   },
   {
     accent: '#E5A50A',
-    icon: '🙋',
+    abbr: 'BD',
     title: 'Your situation',
     term: 'Business Decline',
     body: 'Wrong PIN, low balance, daily limit hit. Real failures, but not the bank breaking. We leave these out of the ranking.',
   },
   {
     accent: '#12A150',
-    icon: '👥',
+    abbr: 'Σ×',
     title: 'How many people',
     term: 'Impact',
     body: 'A giant bank failing 1% of the time hurts far more people than a tiny one failing 5%. We weigh failures by size.',
@@ -94,7 +94,7 @@ export default function Overview(props: Props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="chip bg-upi-orange/12 text-upi-orange-deep mb-4">
+          <span className="chip bg-upi-orange/12 text-upi-orange-deep mb-4 border border-upi-orange/20">
             <span className="h-1.5 w-1.5 rounded-full bg-upi-orange animate-pulse" /> Built from NPCI public data
           </span>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl leading-[1.05] text-ink mb-4">
@@ -104,14 +104,25 @@ export default function Overview(props: Props) {
           </h1>
           <p className="text-ink-soft text-base leading-relaxed mb-6 max-w-lg">
             Every UPI payment runs through your bank. Some banks quietly fail far more often than
-            others — and it’s <strong className="text-ink">never your fault</strong>. We stacked{' '}
-            {allMonths.length} months of official data to show you who’s reliable, in plain English.
+            others — and it's <strong className="text-ink">never your fault</strong>. We stacked{' '}
+            {allMonths.length} months of official data to show you who's reliable, in plain English.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/map" className="px-5 py-2.5 rounded-xl bg-upi-orange text-white font-semibold text-sm shadow-lift hover:bg-upi-orange-deep transition-colors">
+            <Link
+              to="/map"
+              className="px-5 py-2.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                background: 'linear-gradient(135deg, #FF8A3D, #E2540B)',
+                boxShadow: '0 4px 16px rgba(255,106,26,0.40), 0 1px 3px rgba(226,84,11,0.30)',
+              }}
+            >
               See the map →
             </Link>
-            <Link to="/about" className="px-5 py-2.5 rounded-xl bg-surface border border-line text-ink font-semibold text-sm hover:border-upi-orange/40 transition-colors">
+            <Link
+              to="/about"
+              className="px-5 py-2.5 rounded-xl font-semibold text-sm text-ink transition-all duration-200 hover:border-upi-orange/40"
+              style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)' }}
+            >
               How does this work?
             </Link>
           </div>
@@ -134,18 +145,37 @@ export default function Overview(props: Props) {
         viewport={{ once: true }}
         className="card overflow-hidden mb-12 relative"
       >
-        <div className="absolute inset-0 bg-grid opacity-60" />
-        <div className="relative p-7 sm:p-10 text-center">
-          <p className="eyebrow mb-3">The headline</p>
-          <h2 className="font-display font-extrabold text-2xl sm:text-3xl leading-snug text-ink">
-            Just{' '}
-            <span className="text-rel-critical"><CountUp to={weakCount} /></span>{' '}
-            {weakCount === 1 ? 'bank causes' : 'banks cause'} about{' '}
-            <span className="text-rel-critical"><CountUp to={Math.round(totalTDShare)} suffix="%" /></span>{' '}
-            of all the “bank’s-fault” payment failures we measured.
-          </h2>
-          <p className="text-ink-soft text-sm mt-3 max-w-xl mx-auto">
-            A handful of repeat offenders drag down the whole system. Here’s the full picture, month by month.
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 110%, rgba(220,40,40,0.08), transparent 68%)' }}
+        />
+        <div className="relative p-8 sm:p-12 text-center">
+          <p className="eyebrow mb-5">The headline finding</p>
+          <div className="flex items-center justify-center gap-6 sm:gap-10 mb-5 flex-wrap">
+            <div>
+              <div
+                className="font-display font-extrabold text-6xl sm:text-7xl text-rel-critical tabular-nums leading-none"
+                style={{ textShadow: '0 0 48px rgba(220,40,40,0.32)' }}
+              >
+                <CountUp to={weakCount} />
+              </div>
+              <div className="text-sm text-ink-soft mt-2 font-medium">
+                {weakCount === 1 ? 'bank' : 'banks'} with issues
+              </div>
+            </div>
+            <div className="text-4xl sm:text-5xl text-ink-faint font-light select-none" aria-hidden="true">→</div>
+            <div>
+              <div
+                className="font-display font-extrabold text-6xl sm:text-7xl text-rel-critical tabular-nums leading-none"
+                style={{ textShadow: '0 0 48px rgba(220,40,40,0.32)' }}
+              >
+                <CountUp to={Math.round(totalTDShare)} suffix="%" />
+              </div>
+              <div className="text-sm text-ink-soft mt-2 font-medium">of all bank-fault failures</div>
+            </div>
+          </div>
+          <p className="text-ink-soft text-sm max-w-xl mx-auto leading-relaxed">
+            A handful of repeat offenders drag down the whole system. Here's the full picture, month by month.
           </p>
         </div>
       </motion.div>
@@ -153,7 +183,7 @@ export default function Overview(props: Props) {
       {/* How to read this */}
       <section className="mb-12" aria-label="Plain-language explainer">
         <h2 className="font-display font-bold text-xl text-ink mb-1">First, two kinds of failure</h2>
-        <p className="text-ink-soft text-sm mb-5">When a UPI payment fails, it’s one of two things. We only judge banks on the first.</p>
+        <p className="text-ink-soft text-sm mb-5">When a UPI payment fails, it's one of two things. We only judge banks on the first.</p>
         <div className="grid sm:grid-cols-3 gap-4">
           {CONCEPTS.map((c, i) => (
             <motion.div
@@ -162,13 +192,22 @@ export default function Overview(props: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="card p-5"
+              className="card p-5 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="grid h-10 w-10 place-items-center rounded-xl text-xl" style={{ background: c.accent + '16' }}>{c.icon}</span>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: `radial-gradient(ellipse at 0% 0%, ${c.accent}10, transparent 60%)` }}
+              />
+              <div className="relative flex items-center gap-3 mb-3">
+                <div
+                  className="grid h-10 w-10 place-items-center rounded-xl font-mono text-xs font-extrabold shrink-0"
+                  style={{ background: c.accent + '18', color: c.accent, border: `1px solid ${c.accent}28` }}
+                >
+                  {c.abbr}
+                </div>
                 <div>
-                  <div className="font-display font-bold text-ink">{c.title}</div>
-                  <div className="text-[11px] font-mono" style={{ color: c.accent }}>{c.term}</div>
+                  <div className="font-display font-bold text-ink text-sm">{c.title}</div>
+                  <div className="text-[10px] font-mono font-semibold" style={{ color: c.accent }}>{c.term}</div>
                 </div>
               </div>
               <p className="text-sm text-ink-soft leading-relaxed">{c.body}</p>
@@ -186,7 +225,7 @@ export default function Overview(props: Props) {
             The reliability heatmap
             <InfoTip label="How to read the heatmap">
               Each square is one bank in one month. <strong className="text-white">Greener = more reliable</strong>,{' '}
-              redder = failed more often. A whole red row means a bank that’s always shaky; one red square is a single bad month.
+              redder = failed more often. A whole red row means a bank that's always shaky; one red square is a single bad month.
             </InfoTip>
           </h2>
         </div>
@@ -202,7 +241,7 @@ export default function Overview(props: Props) {
           <h2 className="font-display font-bold text-lg text-rel-critical mb-1 flex items-center gap-2">
             <span aria-hidden="true">▲</span> Avoid if you can
           </h2>
-          <p className="text-sm text-ink-soft mb-4">Highest “bank’s-fault” failure rates in your selected window.</p>
+          <p className="text-sm text-ink-soft mb-4">Highest "bank's-fault" failure rates in your selected window.</p>
           <div className="flex flex-col gap-3">
             {worst3.map((b, i) => <BankCard key={`${b.bank}-${b.role}`} bank={b} rank={i} />)}
           </div>
@@ -211,7 +250,7 @@ export default function Overview(props: Props) {
           <h2 className="font-display font-bold text-lg text-rel-excellent mb-1 flex items-center gap-2">
             <span aria-hidden="true">◆</span> Safest bets
           </h2>
-          <p className="text-sm text-ink-soft mb-4">These banks’ systems rarely let you down.</p>
+          <p className="text-sm text-ink-soft mb-4">These banks' systems rarely let you down.</p>
           <div className="flex flex-col gap-3">
             {best3.map((b, i) => <BankCard key={`${b.bank}-${b.role}`} bank={b} rank={i} />)}
           </div>

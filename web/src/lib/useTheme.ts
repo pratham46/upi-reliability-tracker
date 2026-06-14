@@ -7,11 +7,6 @@ function current(): Theme {
   return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 }
 
-/**
- * Theme hook backed by the `dark` class on <html>. Toggling flips the class
- * and persists to localStorage; a MutationObserver keeps every consumer
- * (charts in different pages) in sync without a context provider.
- */
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(current)
 
@@ -27,26 +22,30 @@ export function useTheme() {
     try {
       localStorage.setItem('theme', next)
     } catch {
-      /* ignore storage errors */
+      /* ignore */
     }
   }, [])
 
   return { theme, toggle }
 }
 
-/** Theme-aware colors for Recharts (which take props, not Tailwind classes). */
+/** Theme-aware Recharts config matching the frost glass palette. */
 export function chartTheme(theme: Theme) {
   const dark = theme === 'dark'
   return {
-    grid: dark ? '#2A303C' : '#EBE6DA',
-    axis: dark ? '#6E7480' : '#9A9DA7',
+    grid: dark ? '#1C2E58' : '#CAD8F5',
+    axis: dark ? '#506AA0' : '#7590C8',
     tooltip: {
-      background: dark ? '#161B22' : '#FFFFFF',
-      border: `1px solid ${dark ? '#2A303C' : '#EAE4D7'}`,
+      background: dark ? 'rgba(10,16,38,0.94)' : 'rgba(248,251,255,0.96)',
+      border: `1px solid ${dark ? 'rgba(255,255,255,0.10)' : 'rgba(202,218,248,0.80)'}`,
       borderRadius: '12px',
       fontSize: '12px',
-      boxShadow: '0 10px 30px -16px rgba(0,0,0,0.35)',
-      color: dark ? '#E9EDF3' : '#181B24',
+      boxShadow: dark
+        ? '0 2px 4px rgba(0,0,0,0.28), 0 16px 48px -12px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.06)'
+        : '0 2px 4px rgba(8,16,46,0.04), 0 16px 48px -12px rgba(8,16,46,0.10), inset 0 1px 0 rgba(255,255,255,0.65)',
+      backdropFilter: 'blur(16px)',
+      color: dark ? '#E2EAFC' : '#08102E',
+      padding: '10px 14px',
     },
   }
 }

@@ -67,7 +67,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="sticky top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 glass-nav">
         <nav
           className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4"
           aria-label="Main navigation"
@@ -82,14 +82,13 @@ export default function App() {
               <div className="font-display font-bold text-[14px] sm:text-[15px] text-ink tracking-tight">
                 UPI Reliability
               </div>
-              <div className="text-[10px] text-ink-faint font-medium hidden sm:block">
-                Which banks actually work?
+              <div className="text-[10px] text-ink-faint font-medium hidden sm:block tracking-wide">
+                NPCI public data · bank-by-bank
               </div>
             </div>
           </Link>
 
-          {/* Desktop nav links — hidden on mobile */}
-          <ul className="hidden sm:flex gap-1" role="list">
+          <ul className="hidden sm:flex gap-0.5" role="list">
             {NAV.map((n) => (
               <li key={n.to}>
                 <NavLink
@@ -99,7 +98,7 @@ export default function App() {
                     `px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors whitespace-nowrap ${
                       isActive
                         ? 'bg-upi-orange/12 text-upi-orange-deep'
-                        : 'text-ink-soft hover:text-ink hover:bg-surface-sunken'
+                        : 'text-ink-soft hover:text-ink hover:bg-surface-sunken/60'
                     }`
                   }
                 >
@@ -112,9 +111,8 @@ export default function App() {
           <div className="flex items-center gap-1">
             <ThemeToggle />
 
-            {/* Hamburger — mobile only */}
             <button
-              className="sm:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-xl hover:bg-surface-sunken transition-colors"
+              className="sm:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-xl hover:bg-surface-sunken/60 transition-colors"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
@@ -139,7 +137,6 @@ export default function App() {
           </div>
         </nav>
 
-        {/* Mobile nav dropdown */}
         <AnimatePresence initial={false}>
           {menuOpen && (
             <motion.div
@@ -149,7 +146,8 @@ export default function App() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="sm:hidden overflow-hidden border-t border-line bg-paper/95 backdrop-blur-xl"
+              className="sm:hidden overflow-hidden"
+              style={{ borderTop: '1px solid var(--glass-border)', background: 'rgb(var(--paper) / 0.96)' }}
             >
               <ul className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1" role="list">
                 {NAV.map((n) => (
@@ -162,7 +160,7 @@ export default function App() {
                         `block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                           isActive
                             ? 'bg-upi-orange/12 text-upi-orange-deep'
-                            : 'text-ink-soft hover:text-ink hover:bg-surface-sunken'
+                            : 'text-ink-soft hover:text-ink hover:bg-surface-sunken/60'
                         }`
                       }
                     >
@@ -193,7 +191,7 @@ export default function App() {
         </motion.div>
       </main>
 
-      <footer className="border-t border-line mt-10">
+      <footer style={{ borderTop: '1px solid var(--glass-border)' }} className="mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
           <div className="flex items-center gap-2">
             <Logo size={22} animated={false} />

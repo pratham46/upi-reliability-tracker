@@ -18,52 +18,70 @@ export default function BankCard({ bank, rank }: { bank: BankEntry; rank?: numbe
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -3 }}
-      className="card-interactive p-4 cursor-pointer"
+      className="card-interactive p-4"
       onClick={go}
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter') go() }}
       aria-label={`${bank.bank} — fails ${stats.mean_td.toFixed(2)}% of the time on average, ${tdLabel(stats.mean_td)}`}
       role="article"
     >
-      <div className="flex items-center gap-3 mb-3">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-4">
         {rank !== undefined && (
-          <span className="font-mono text-xs text-ink-faint w-5 shrink-0">{String(rank + 1).padStart(2, '0')}</span>
+          <span className="font-mono text-[11px] font-bold text-ink-faint w-5 shrink-0 tabular-nums">
+            {String(rank + 1).padStart(2, '0')}
+          </span>
         )}
-        <BankAvatar name={bank.bank} size={38} />
+        <BankAvatar name={bank.bank} size={36} />
         <div className="min-w-0 flex-1">
-          <div className="font-semibold text-sm text-ink truncate">{bank.bank}</div>
-          <div className="text-[11px] text-ink-faint capitalize">
+          <div className="font-semibold text-sm text-ink truncate leading-tight">{bank.bank}</div>
+          <div className="text-[11px] text-ink-faint capitalize mt-0.5">
             {bank.role === 'remitter' ? 'when sending' : 'when receiving'}
           </div>
         </div>
         <ClassificationBadge c={stats.classification} />
       </div>
 
-      <div className="flex items-end justify-between gap-3">
+      {/* Main stat */}
+      <div className="flex items-end justify-between gap-3 mb-4">
         <div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-display font-bold text-2xl" style={{ color }}>{stats.mean_td.toFixed(2)}%</span>
-            <span className="text-xs font-semibold" style={{ color }}>{tdLabel(stats.mean_td)}</span>
+          <div
+            className="font-display font-extrabold text-3xl tabular-nums leading-none"
+            style={{ color, textShadow: `0 0 28px ${color}55, 0 0 56px ${color}1A` }}
+          >
+            {stats.mean_td.toFixed(2)}%
           </div>
-          <div className="text-[11px] text-ink-faint">of payments fail (bank's fault), on average</div>
+          <div className="text-[11px] text-ink-faint mt-1.5">avg bank-fault failures</div>
         </div>
-        <Sparkline values={bank.series.map((s) => s.td_pct)} />
+        <div className="flex flex-col items-end gap-1.5">
+          <Sparkline values={bank.series.map((s) => s.td_pct)} width={96} height={32} />
+          <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color }}>
+            {tdLabel(stats.mean_td)}
+          </span>
+        </div>
       </div>
 
-      <div className="mt-3 pt-3 border-t border-line grid grid-cols-3 gap-2 text-center">
-        <div>
-          <div className="font-mono text-sm font-semibold text-ink">{stats.max_td.toFixed(1)}%</div>
-          <div className="text-[10px] text-ink-faint">worst month</div>
+      {/* Footer stats */}
+      <div
+        className="grid grid-cols-3 rounded-xl overflow-hidden text-center"
+        style={{
+          background: 'rgb(var(--surface-sunken) / 0.55)',
+          border: '1px solid rgb(var(--line) / 0.48)',
+        }}
+      >
+        <div className="px-2 py-2.5" style={{ borderRight: '1px solid rgb(var(--line) / 0.48)' }}>
+          <div className="font-mono text-sm font-bold text-ink tabular-nums">{stats.max_td.toFixed(1)}%</div>
+          <div className="text-[9px] text-ink-faint uppercase tracking-wide mt-0.5">worst mo.</div>
         </div>
-        <div>
-          <div className="font-mono text-sm font-semibold" style={{ color: trendColor(stats.trend) }}>
-            {trendIcon(stats.trend)} <span className="capitalize">{stats.trend}</span>
+        <div className="px-2 py-2.5" style={{ borderRight: '1px solid rgb(var(--line) / 0.48)' }}>
+          <div className="font-mono text-sm font-bold tabular-nums" style={{ color: trendColor(stats.trend) }}>
+            {trendIcon(stats.trend)}
           </div>
-          <div className="text-[10px] text-ink-faint">direction</div>
+          <div className="text-[9px] text-ink-faint uppercase tracking-wide mt-0.5 capitalize">{stats.trend}</div>
         </div>
-        <div>
-          <div className="font-mono text-sm font-semibold text-ink">{stats.impact_score.toFixed(2)}M</div>
-          <div className="text-[10px] text-ink-faint">people/mo hit</div>
+        <div className="px-2 py-2.5">
+          <div className="font-mono text-sm font-bold text-ink tabular-nums">{stats.impact_score.toFixed(1)}M</div>
+          <div className="text-[9px] text-ink-faint uppercase tracking-wide mt-0.5">affected/mo</div>
         </div>
       </div>
     </motion.article>

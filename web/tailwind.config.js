@@ -5,8 +5,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Surfaces & ink are driven by CSS variables (see index.css) so they
-        // flip between the light "paper" theme and the dark theme.
         paper: 'rgb(var(--paper) / <alpha-value>)',
         surface: {
           DEFAULT: 'rgb(var(--surface) / <alpha-value>)',
@@ -22,7 +20,6 @@ export default {
           soft: 'rgb(var(--ink-soft) / <alpha-value>)',
           faint: 'rgb(var(--ink-faint) / <alpha-value>)',
         },
-        // UPI brand
         upi: {
           orange: '#FF6A1A',
           'orange-deep': '#E2540B',
@@ -31,7 +28,6 @@ export default {
           navy: '#1B2A4A',
           ink: '#161A23',
         },
-        // Reliability scale (traffic-light, shares endpoints with brand)
         rel: {
           excellent: '#12A150',
           good: '#62B95C',
@@ -40,7 +36,6 @@ export default {
           critical: '#DC2828',
           na: '#C9C3B6',
         },
-        // Classification accents
         cls: {
           solid: '#12A150',
           weak: '#DC2828',
@@ -54,14 +49,16 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        card: '0 1px 2px rgba(24,27,36,0.04), 0 10px 30px -16px rgba(24,27,36,0.18)',
-        lift: '0 10px 40px -14px rgba(226,84,11,0.28), 0 2px 6px rgba(24,27,36,0.06)',
-        glow: '0 0 0 4px rgba(255,106,26,0.12)',
-        inset: 'inset 0 1px 2px rgba(24,27,36,0.05)',
+        card: '0 1px 3px rgba(8,16,46,0.04), 0 10px 30px -16px rgba(8,16,46,0.08)',
+        lift: '0 10px 40px -14px rgba(255,106,26,0.32), 0 2px 6px rgba(8,16,46,0.06)',
+        glow: '0 0 0 4px rgba(255,106,26,0.14)',
+        'glow-orange': '0 0 24px rgba(255,106,26,0.40), 0 0 8px rgba(255,106,26,0.22)',
+        'glow-green': '0 0 20px rgba(18,161,80,0.35), 0 0 6px rgba(18,161,80,0.18)',
+        inset: 'inset 0 1px 2px rgba(8,16,46,0.05)',
       },
       backgroundImage: {
         'brand-gradient': 'linear-gradient(135deg, #FF6A1A 0%, #FF8A3D 45%, #12A150 130%)',
-        'orange-fade': 'linear-gradient(135deg, #FF6A1A, #E2540B)',
+        'orange-fade': 'linear-gradient(135deg, #FF8A3D, #E2540B)',
         'green-fade': 'linear-gradient(135deg, #16B85A, #0A7C3C)',
       },
       animation: {
