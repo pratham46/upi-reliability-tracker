@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Controls from '../components/Controls'
@@ -225,33 +226,36 @@ export default function ReliabilityMap(props: Props) {
       </div>
 
       {/* Viewport-anchored tooltip */}
-      <AnimatePresence>
-        {hovered && hoveredWS && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.92 }}
-            transition={{ duration: 0.14 }}
-            className="fixed z-50 pointer-events-none w-60 card p-3.5 shadow-lift"
-            style={{
-              left: Math.min(cursor.x + 16, window.innerWidth - 256),
-              top: Math.min(cursor.y + 16, window.innerHeight - 180),
-            }}
-          >
-            <div className="flex items-center gap-2.5 mb-2">
-              <BankAvatar name={hovered.bank} size={32} />
-              <div className="font-semibold text-sm text-ink leading-tight">{hovered.bank}</div>
-            </div>
-            <ClassificationBadge c={hovered.stats.classification} />
-            <p className="text-xs text-ink-soft mt-2 leading-snug">{tdPlain(hoveredWS.mean_td)}</p>
-            <div className="mt-2 grid grid-cols-2 gap-2 text-[11px] text-ink-faint">
-              <div>Avg TD: <span className="text-ink font-mono">{hoveredWS.mean_td.toFixed(2)}%</span></div>
-              <div>Volume: <span className="text-ink font-mono">{hoveredWS.mean_vol.toFixed(0)}M</span></div>
-            </div>
-            <p className="text-[10px] text-upi-orange-deep mt-2 font-semibold">Click for the full story →</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {createPortal(
+        <AnimatePresence>
+          {hovered && hoveredWS && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.14 }}
+              className="fixed z-[9999] pointer-events-none w-60 card p-3.5 shadow-lift"
+              style={{
+                left: Math.min(cursor.x + 16, window.innerWidth - 256),
+                top: Math.min(cursor.y + 16, window.innerHeight - 180),
+              }}
+            >
+              <div className="flex items-center gap-2.5 mb-2">
+                <BankAvatar name={hovered.bank} size={32} />
+                <div className="font-semibold text-sm text-ink leading-tight">{hovered.bank}</div>
+              </div>
+              <ClassificationBadge c={hovered.stats.classification} />
+              <p className="text-xs text-ink-soft mt-2 leading-snug">{tdPlain(hoveredWS.mean_td)}</p>
+              <div className="mt-2 grid grid-cols-2 gap-2 text-[11px] text-ink-faint">
+                <div>Avg TD: <span className="text-ink font-mono">{hoveredWS.mean_td.toFixed(2)}%</span></div>
+                <div>Volume: <span className="text-ink font-mono">{hoveredWS.mean_vol.toFixed(0)}M</span></div>
+              </div>
+              <p className="text-[10px] text-upi-orange-deep mt-2 font-semibold">Click for the full story →</p>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   )
 }

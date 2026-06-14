@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import { tdColor, tdLabel, tdPlain, formatMonth, classificationColor, classificationIcon } from '../lib/data'
 import type { BankEntry } from '../lib/types'
@@ -152,9 +153,9 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
       </div>
 
       {/* Glass tooltip */}
-      {hover && (
+      {hover && createPortal(
         <div
-          className="pointer-events-none fixed z-50 w-56 rounded-xl px-3.5 py-3"
+          className="pointer-events-none fixed z-[9999] w-56 rounded-xl px-3.5 py-3"
           style={{
             left: Math.min(cursor.x + 16, window.innerWidth - 240),
             top: Math.min(cursor.y + 16, window.innerHeight - 130),
@@ -171,7 +172,8 @@ export default function Heatmap({ banks, months, onBankClick }: HeatmapProps) {
             {hover.td !== null ? `${hover.td.toFixed(2)}% failed` : 'No data'}
           </div>
           <div className="mt-0.5 text-[11px] leading-snug text-ink-soft">{tdPlain(hover.td)}</div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Legend */}
